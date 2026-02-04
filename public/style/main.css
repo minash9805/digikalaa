@@ -226,12 +226,14 @@ svg {
     color: #62666d;
     white-space: nowrap;
 }
-
+.new-menu-nav-left{
+    justify-self: end;
+}
 
 .new-menu-nav-left-child{
     width: fit-content;
     height: 100%;
-    justify-self: end;
+    
     &:hover .new-menu-nav-left-child-item{
         display: block;
     }
