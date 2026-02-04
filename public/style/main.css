@@ -33,6 +33,13 @@ a {
     font-family: shabnam;
     src: url(../font/Shabnam-FD.woff2);
 }
+@font-face {
+    font-family: 'yekan';
+    src: url('../font/iranyekanwebregular.b95439c1.b95439c1.woff');
+
+    font-style: normal;
+    font-weight: normal;
+}
 
 .container {
     width: 90%;
@@ -147,81 +154,320 @@ svg {
     width: 100%;
 }
 
-.header-bottom {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    margin-top: 30px;
+.new-menu {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
 }
 
-.header-bottom-left {
+.new-menu-nav {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    position: relative;
 
-    width: fit-content;
-    justify-self: end;
+}
+
+.new-menu-nav-right {
     display: flex;
     align-items: center;
-    column-gap: 5px;
-}
-
-.header-bottom-left span {
-    font-size: 12px;
-    color: #3f4064;
-}
-
-.header-bottom-left svg {
-    max-width: 20px;
-    color: #3f4064;
-}
-
-.header-bottom-right {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    align-items: center;
-    justify-items: center;
     column-gap: 15px;
 }
 
-.header-bottom-right>:first-child span {
+.new-menu-nav-right> :first-child {
+    &:hover .sub-menu {
+        display: block;
+    }
+}
+
+.new-menu-nav-right> :first-child .new-menu-nav-right-item-link svg {
+    color: #3f4064;
+    width: 20px;
+    height: 20px;
+}
+
+.new-menu-nav-right> :first-child .new-menu-nav-right-item-link span {
     font-size: 14px;
+    font-weight: 600;
     color: #3f4064;
-    font-weight: 700;
 }
 
-.header-bottom-right>:first-child svg {
-    max-width: 22px;
-    color: #3f4064;
+.new-menu-nav-right-item {
+    width: fit-content;
+    height: 100%;
+    transition: 300ms;
+
+    &:hover {
+        border-bottom: 1.5px solid red;
+    }
 
 }
 
-.header-bottom-right-item {
+.new-menu-nav-right-item-link {
     display: flex;
+    justify-content: center;
     align-items: center;
     column-gap: 5px;
-    justify-content: center;
-    width: fit-content;
-    transition: 100ms;
-
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
-.header-bottom-right-item svg {
-    max-width: 20px;
+.new-menu-nav-right-item-link svg {
+    width: 18px;
+    height: 18px;
     color: #62666d;
-
 }
 
-.header-bottom-right-item span {
+.new-menu-nav-right-item-link span {
+    font-family: yekan;
     font-size: 12px;
     color: #62666d;
     white-space: nowrap;
+}
+
+.new-menu-nav-left {
+    justify-items: end;
+    
+   
+}
+.new-menu-nav-left-child{
+    width: fit-content;
+    height: 100%;
+    &:hover .new-menu-nav-left-child-item{
+        display: block;
+    }
+}
+
+.new-menu-nav-left-child-link {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    text-decoration: none;
+
+}
+
+.new-menu-nav-left-child-link svg {
+    width: 18px;
+    height: 18px;
+    color: #62666d;
+}
+
+.new-menu-nav-left-child-link span {
+    font-size: 12px;
+    font-family: yekan;
+    color: #62666d;
+}
+.new-menu-nav-left-child-item{
+    width: 300px;
+    height: 100%;
+    background-color: #2b2b2b;
+    position: absolute;
+    left: 0;
+    display: none;
+    border-radius: 5px;
+   text-align: center;
+   line-height: 35px;
+}
+.new-menu-nav-left-child-item span{
+    font-family: yekan;
+    color: whitesmoke;
+    font-size: 12px;
+}
+
+
+.sub-menu {
+    width: 70%;
+    height: 60vh;
+    background-color: #62666d;
+    position: absolute;
+    display: none;
+    z-index: 2;
+
+
+}
+
+.sub-menu-right {
+    width: 23%;
+    height: 100%;
+    background-color: #f0f0f1;
+
+    overflow: auto;
+    direction: ltr;
+}
+
+.sub-menu-right::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-menu-right-item {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 1px;
+    padding: 0 10px;
+    transition: 300ms;
+
+    &:hover {
+        background-color: whitesmoke;
+    }
+
+    &:hover .sub-menu-right-item-link span {
+        color: red;
+    }
+
+    &:hover .sub-menu-right-item-link svg {
+        color: red;
+    }
+
+    &:hover .sum-menu-right-item-sub-menu {
+        display: block;
+    }
+}
+
+.sub-menu-right-item-link {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.sub-menu-right-item-link svg {
+    width: 18px;
+    height: 18px;
+    color: #3f4064;
+    order: 2;
     transition: 300ms;
 }
 
-.header-bottom-right-item:hover {
-    border-bottom: 3px solid red;
+.sub-menu-right-item-link span {
+    font-family: yekan;
+    color: #3f4064;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 300ms;
+
 
 }
 
-.header-bottom-right-item:hover span {
+.sum-menu-right-item-sub-menu {
+    width: 77%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    direction: rtl;
+    padding: 20px;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
+.sum-menu-right-item-sub-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-menu-2-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+}
+
+.sub-menu-2-top span {
+    font-family: yekan;
     font-size: 14px;
+    color: #19bfd3;
+
+}
+
+.sub-menu-2-top svg {
+    width: 14px;
+    height: 14px;
+    color: #19bfd3;
+
+
+}
+
+.first {
+    display: block;
+}
+
+.sub-menu-2-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 20px;
+}
+
+.sub-menu-2-bottom-child {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.sub-menu-2-bottom-child-link {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    text-decoration: none;
+    margin: 10px 0;
+    width: fit-content;
+
+    &:hover h4 {
+        color: red;
+    }
+
+    &:hover svg {
+        color: red;
+    }
+
+
+}
+
+.sub-menu-line {
+    width: 2px;
+    height: 15px;
+    background-color: red;
+
+
+}
+
+.sub-menu-2-bottom-child-link h4 {
+    font-family: yekan;
+    color: #3f4064;
+    font-weight: 600;
+    transition: 300ms;
+    font-size: 14px;
+
+
+}
+
+.sub-menu-2-bottom-child-link svg {
+    width: 12px;
+    height: 12px;
+    color: #3f4064;
+    transition: 300ms;
+}
+
+.sub-menu-box-child-bottom {
+    font-family: yekan;
+    color: #62666d;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 300ms;
+    width: fit-content;
+
+    &:hover {
+        color: red;
+    }
 }
 
 .header-bottom-mobile {
@@ -297,7 +543,7 @@ svg {
     overflow-x: auto;
     overflow-y: hidden;
 
-    margin-top: 50px;
+    margin-top: 20px;
     column-gap: 5px;
 
 
@@ -305,9 +551,7 @@ svg {
 
 
 
-.main-story::-webkit-scrollbar {
-    display: none;
-}
+
 
 .main-story-item a {
     width: 85px;
@@ -740,7 +984,7 @@ svg {
 
 .main-shop {
     display: grid;
-    grid-auto-columns: minmax(200px, 1fr);
+    grid-auto-columns: minmax(170px, 1fr);
     grid-auto-flow: column;
     overflow-x: auto;
     overflow-y: hidden;
@@ -833,9 +1077,7 @@ svg {
     margin-top: 15px;
 }
 
-.main-brand-bottom::-webkit-scrollbar {
-    display: none;
-}
+
 
 .main-brand-top-mobile {
     display: flex;
